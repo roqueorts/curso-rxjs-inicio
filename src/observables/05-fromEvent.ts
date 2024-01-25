@@ -7,16 +7,16 @@ const src2$ = fromEvent<KeyboardEvent>(document, 'keyup');
 
 
 const observer = {
-    next: value => {
+    next: (value: any) => {
         console.log(value);
     },
-    error: value => {
+    error: (value: any) => {
         console.log(value);
     },
     complete: () => {
         console.log('Completado');
     },
-}
+};
 
 //src1$.subscribe(observer);
 src1$.subscribe(({ x, y }) => {

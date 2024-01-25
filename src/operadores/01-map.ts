@@ -1,10 +1,12 @@
-import { range, fromEvent } from 'rxjs';
-import { map, mapTo, pluck, tap } from 'rxjs/operators';
+import { fromEvent, range } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 // range
-range(1, 5).pipe(map<number, number>(val => { // recibe un number y tiene que devolver un number
-    return val * 10;
-}));
+range(1, 5).pipe(
+    map<number, number>((val: number) => { // recibe un number y tiene que devolver un number
+        return val * 10;
+    }),
+    catchError((err) => { return err; }));
 
 // fromEvent
 const keyup$ = fromEvent<KeyboardEvent>(document, 'keyup');

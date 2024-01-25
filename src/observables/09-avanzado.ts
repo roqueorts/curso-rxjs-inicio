@@ -1,17 +1,17 @@
-import { of, from } from 'rxjs';
+import { from, of } from 'rxjs';
 
 
 const observer = {
-    next: value => {
+    next: (value: any) => {
         console.log(value);
     },
-    error: value => {
+    error: (value: any) => {
         console.log(value);
     },
     complete: () => {
         console.log('Completado');
     },
-}
+};
 
 
 /* of */
@@ -38,7 +38,7 @@ const miGenerador = function* () {
     yield 1;
     yield 2;
     yield 3;
-}
+};
 
 const miIterable = miGenerador();
 

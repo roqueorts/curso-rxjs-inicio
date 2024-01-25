@@ -1,4 +1,4 @@
-import { range, of, observeOn, asyncScheduler, interval, timer } from 'rxjs';
+import { interval, timer } from 'rxjs';
 
 
 
@@ -9,16 +9,16 @@ const hoyEn5 = new Date();
 hoyEn5.setSeconds(hoyEn5.getSeconds() + 5);
 const timer$ = timer(hoyEn5);
 const observer = {
-    next: value => {
+    next: (value: any) => {
         console.log('next: ', value);
     },
-    error: value => {
+    error: (value: any) => {
         console.log(value);
     },
     complete: () => {
         console.log('Completado');
     },
-}
+};
 
 console.log('inicio');
 

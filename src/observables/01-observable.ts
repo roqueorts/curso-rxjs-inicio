@@ -1,6 +1,7 @@
 import { Observable, Observer } from "rxjs";
 
-
+// En promesas el async/await sirve para bloquear llamadas asíncronas a promesas
+// Para manejar errores se puede usar el operador catchError de rxjs
 console.log('Hola Mundo!');
 
 const observer: Observer<string> = {

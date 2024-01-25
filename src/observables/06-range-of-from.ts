@@ -1,4 +1,4 @@
-import { range, of, observeOn, asyncScheduler, from } from 'rxjs';
+import { from, of, range } from 'rxjs';
 
 
 
@@ -8,16 +8,16 @@ const src3$ = from([1, 2, 3]);
 
 
 const observer = {
-    next: value => {
+    next: (value: any) => {
         console.log(value);
     },
-    error: value => {
+    error: (value: any) => {
         console.log(value);
     },
     complete: () => {
         console.log('Completado');
     },
-}
+};
 
 console.log('inicio');
 

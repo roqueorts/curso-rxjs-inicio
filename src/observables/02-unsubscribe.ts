@@ -1,16 +1,5 @@
-import { Observable, Observer } from "rxjs";
+import { Observable } from "rxjs";
 
-const observer: Observer<string> = {
-    next: value => {
-        console.log(value);
-    },
-    error: err => {
-        throw new Error("Function not implemented.");
-    },
-    complete: () => {
-        console.log('completado');
-    }
-};
 const intervalo$ = new Observable<number>(subscriber => {
 
     // Crear un contador
@@ -28,7 +17,7 @@ const intervalo$ = new Observable<number>(subscriber => {
         clearInterval(intervalo);
         console.log('Intervalo destruído');
 
-    }
+    };
 });
 
 

@@ -3,7 +3,7 @@ import { asyncScheduler } from 'rxjs';
 
 
 const saludar = () => console.log('Hola mundo');
-const saludar2 = (nombre) => console.log(`Hola ${nombre}`);
+const saludar2 = (nombre: string | undefined) => console.log(`Hola ${nombre}`);
 // const saludar3 = (nombre) => console.log(`Hola ${nombre.nombre} ${nombre.apellido}`);
 
 
@@ -14,7 +14,9 @@ asyncScheduler.schedule(saludar2, 2000, 'pepe');
 const subs = asyncScheduler.schedule(function (state) {
 
     console.log('state: ', state);
-    this.schedule(state + 1, 1000);
+    if (state !== undefined) {
+        this.schedule(state + 1, 1000);
+    }
 
 }, 3000, 1);
 
